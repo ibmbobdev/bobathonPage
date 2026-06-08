@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | 2026 IBM Bobathon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      /* IBM Carbon Design System Variables */
+      --cds-blue-60: #0f62fe;
+      --cds-blue-70: #0043ce;
+      --cds-gray-100: #161616;
+      --cds-gray-70: #525252;
+      --cds-gray-50: #8d8d8d;
+      --cds-gray-30: #c6c6c6;
+      --cds-gray-20: #e0e0e0;
+      --cds-gray-10: #f4f4f4;
+      --cds-white: #ffffff;
+      --cds-layer: #f4f4f4;
+      --cds-border-subtle: #e0e0e0;
+      
+      --cds-spacing-03: 0.5rem;
+      --cds-spacing-04: 0.75rem;
+      --cds-spacing-05: 1rem;
+      --cds-spacing-06: 1.5rem;
+      --cds-spacing-07: 2rem;
+      --cds-spacing-09: 3rem;
+      --cds-spacing-10: 4rem;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: var(--cds-gray-100);
+      background: var(--cds-white);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    /* Header Navigation */
+    .header {
+      background: var(--cds-white);
+      border-bottom: 1px solid var(--cds-border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-content {
+      max-width: 1584px;
+      margin: 0 auto;
+      padding: var(--cds-spacing-05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--cds-gray-100);
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--cds-spacing-07);
+      align-items: center;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--cds-gray-100);
+      font-size: 0.875rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--cds-blue-60);
+    }
+
+    .btn-back {
+      padding: var(--cds-spacing-03) var(--cds-spacing-05);
+      background: var(--cds-layer);
+      color: var(--cds-gray-100);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 400;
+      border: 1px solid var(--cds-gray-30);
+      transition: background 0.2s;
+    }
+
+    .btn-back:hover {
+      background: var(--cds-gray-20);
+    }
+
+    /* Main Content */
+    .page-shell {
+      max-width: 1584px;
+      margin: 0 auto;
+      padding: var(--cds-spacing-10) var(--cds-spacing-05);
+    }
+
+    .form-card {
+      padding: var(--cds-spacing-10) var(--cds-spacing-09);
+      background: var(--cds-layer);
+    }
+
+    .form-head {
+      margin-bottom: var(--cds-spacing-09);
+    }
+
+    .form-head h1 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: clamp(1.75rem, 3vw, 2.625rem);
+      font-weight: 300;
+      line-height: 1.19;
+      margin-bottom: var(--cds-spacing-05);
+      color: var(--cds-gray-100);
+    }
+
+    .form-head p {
+      color: var(--cds-gray-100);
+      font-size: 1rem;
+      line-height: 1.5;
+      max-width: 640px;
+      font-weight: 300;
+    }
+
+    .embed-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--cds-spacing-05);
+      align-items: start;
+    }
+
+    .embed-panel {
+      background: var(--cds-white);
+      overflow: hidden;
+    }
+
+    .embed-frame {
+      width: 100%;
+      min-height: 980px;
+      height: 100vh;
+      border: 0;
+      background: #ffffff;
+      display: block;
+    }
+
+    .info-panel {
+      display: grid;
+      gap: var(--cds-spacing-05);
+    }
+
+    .info-card {
+      background: var(--cds-white);
+      padding: var(--cds-spacing-07);
+    }
+
+    .info-card h3 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: var(--cds-spacing-05);
+      color: var(--cds-gray-100);
+    }
+
+    .info-card p,
+    .info-card li {
+      color: var(--cds-gray-100);
+      font-size: 0.875rem;
+      line-height: 1.43;
+      font-weight: 300;
+    }
+
+    .info-card ul {
+      padding-left: var(--cds-spacing-06);
+      display: grid;
+      gap: var(--cds-spacing-03);
+    }
+
+    .form-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      text-decoration: none;
+      padding: var(--cds-spacing-04) var(--cds-spacing-05);
+      font-size: 0.875rem;
+      font-weight: 400;
+      background: var(--cds-blue-60);
+      color: var(--cds-white);
+      border: none;
+      transition: background 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
+      margin-top: var(--cds-spacing-06);
+      cursor: pointer;
+    }
+
+    .form-link:hover {
+      background: var(--cds-blue-70);
+    }
+
+    .tiny-note {
+      margin-top: var(--cds-spacing-05);
+      font-size: 0.75rem;
+      color: var(--cds-gray-70);
+      line-height: 1.33;
+      font-weight: 300;
+    }
+
+    @media (max-width: 980px) {
+      .embed-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        gap: var(--cds-spacing-05);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page-shell {
+        padding: var(--cds-spacing-07) var(--cds-spacing-05);
+      }
+
+      .form-card {
+        padding: var(--cds-spacing-06);
+      }
+
+      .embed-frame {
+        min-height: 1180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="logo-link">
+        <svg width="40" height="16" viewBox="0 0 40 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="12" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" fill="#161616">IBM</text>
+        </svg>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="btn-back">← Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <section class="form-card">
+      <div class="form-head">
+        <h1>Register for Bobathon 2026</h1>
+        <p>
+          Complete the registration form to secure your spot in the 2026 IBM Bobathon. 
+          Registration is required to participate and submit projects during the event.
+        </p>
+      </div>
+
+      <div class="embed-layout">
+        <div class="embed-panel">
+          <iframe
+            class="airtable-embed embed-frame"
+            title="Bobathon 2026 Registration Form"
+            src="https://airtable.com/embed/appadnAzl6Aa4huXD/pag7CDiKDQg49xZqG/form"
+            frameborder="0"
+            onmousewheel=""
+            width="100%"
+            height="533"
+            style="background: transparent; border: 1px solid #ccc;">
+          </iframe>
+        </div>
+
+        <aside class="info-panel">
+          <div class="info-card">
+            <h3>Registration Information</h3>
+            <p>
+              To register for the Bobathon, you'll need to provide:
+            </p>
+            <ul>
+              <li>Full name</li>
+              <li>Email address</li>
+              <li>GitHub username (optional)</li>
+              <li>Brief introduction</li>
+            </ul>
+            <p class="tiny-note">
+              Your information will be used solely for event management and communication purposes.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Questions?</h3>
+            <p>
+              If you have any questions about registration or the event, please reach out to the organizing team.
+            </p>
+            <a
+              class="form-link"
+              href="https://airtable.com/appadnAzl6Aa4huXD/pag7CDiKDQg49xZqG/form"
+              target="_blank"
+              rel="noopener noreferrer">
+              Open Form in New Tab
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

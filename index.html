@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 IBM Bobathon | Registration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      /* IBM Carbon Design System Variables */
+      --cds-layout-size-height-xs: 24px;
+      --cds-layout-size-height-sm: 32px;
+      --cds-layout-size-height-md: 40px;
+      --cds-layout-size-height-lg: 48px;
+      --cds-layout-size-height-xl: 64px;
+      --cds-layout-size-height-2xl: 80px;
+      --cds-layout-density-padding-inline-condensed: 8px;
+      --cds-layout-density-padding-inline-normal: 16px;
+      
+      /* IBM Carbon Grid */
+      --cds-grid-gutter: 2rem;
+      --cds-grid-columns: 4;
+      --cds-grid-margin: 0;
+      
+      /* Vertical Spacing */
+      --vertical-spacing-default: clamp(2rem, 0.9908rem + 3.6697cqi, 4rem);
+      --vertical-spacing-reduced: calc(var(--vertical-spacing-default) * 0.75);
+      --vertical-spacing-expanded: calc(var(--vertical-spacing-default) * 1.5);
+      --vertical-spacing: var(--vertical-spacing-default);
+      
+      /* IBM Carbon Layer Tokens */
+      --cds-layer: #f4f4f4;
+      --cds-layer-hover: #e8e8e8;
+      --cds-layer-active: #c6c6c6;
+      --cds-layer-selected: #e0e0e0;
+      --cds-field: #f4f4f4;
+      --cds-field-hover: #e8e8e8;
+      --cds-border-subtle: #e0e0e0;
+      --cds-border-strong: #8d8d8d;
+      
+      /* IBM Carbon Color Tokens */
+      --cds-blue-60: #0f62fe;
+      --cds-blue-70: #0043ce;
+      --cds-gray-100: #161616;
+      --cds-gray-90: #262626;
+      --cds-gray-70: #525252;
+      --cds-gray-60: #6f6f6f;
+      --cds-gray-50: #8d8d8d;
+      --cds-gray-30: #c6c6c6;
+      --cds-gray-20: #e0e0e0;
+      --cds-gray-10: #f4f4f4;
+      --cds-white: #ffffff;
+      
+      /* IBM Spacing Scale */
+      --cds-spacing-01: 0.125rem;
+      --cds-spacing-02: 0.25rem;
+      --cds-spacing-03: 0.5rem;
+      --cds-spacing-04: 0.75rem;
+      --cds-spacing-05: 1rem;
+      --cds-spacing-06: 1.5rem;
+      --cds-spacing-07: 2rem;
+      --cds-spacing-08: 2.5rem;
+      --cds-spacing-09: 3rem;
+      --cds-spacing-10: 4rem;
+      --cds-spacing-11: 5rem;
+      --cds-spacing-12: 6rem;
+      --cds-spacing-13: 10rem;
+    }
+
+    @media (min-width: 42rem) {
+      :root {
+        --cds-grid-columns: 8;
+        --cds-grid-margin: 1rem;
+      }
+    }
+
+    @media (min-width: 66rem) {
+      :root {
+        --cds-grid-columns: 16;
+      }
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 100%;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: var(--cds-gray-100);
+      background: var(--cds-white);
+      min-height: 100vh;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page-shell {
+      max-width: 1584px;
+      margin: 0 auto;
+      padding: var(--vertical-spacing) var(--cds-spacing-05);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: stretch;
+      margin-bottom: var(--vertical-spacing);
+    }
+
+    .hero-copy,
+    .hero-visual,
+    .form-card {
+      background: var(--cds-white);
+    }
+
+    .hero-copy {
+      padding: var(--cds-spacing-10) var(--cds-spacing-09);
+      background: var(--cds-layer);
+    }
+
+    .logo-wrap {
+      width: 176px;
+      margin-bottom: var(--cds-spacing-07);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0;
+      background: transparent;
+      color: var(--cds-gray-100);
+      font-size: 0.875rem;
+      font-weight: 400;
+      letter-spacing: 0.16px;
+      text-transform: none;
+      margin-bottom: var(--cds-spacing-05);
+    }
+
+    h1 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: clamp(2.625rem, 5vw, 4.75rem);
+      font-weight: 600;
+      line-height: 1.125;
+      letter-spacing: -0.01em;
+      color: var(--cds-gray-100);
+      margin-bottom: var(--cds-spacing-07);
+    }
+
+    h1 span {
+      color: var(--cds-blue-60);
+      font-weight: 700;
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: var(--cds-gray-100);
+      max-width: 640px;
+      margin-bottom: var(--cds-spacing-09);
+      font-weight: 300;
+    }
+
+    .hero-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      margin-bottom: var(--cds-spacing-08);
+      background: var(--cds-border-subtle);
+    }
+
+    .detail-chip {
+      padding: var(--cds-spacing-06);
+      background: var(--cds-white);
+    }
+
+    .detail-chip strong {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--cds-gray-100);
+      margin-bottom: var(--cds-spacing-03);
+    }
+
+    .detail-chip span {
+      color: var(--cds-gray-70);
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.43;
+    }
+
+    .highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--cds-spacing-02);
+    }
+
+    .highlight-tag {
+      padding: var(--cds-spacing-03) var(--cds-spacing-04);
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--cds-gray-100);
+      background: var(--cds-white);
+      border: 1px solid var(--cds-gray-30);
+    }
+
+    .hero-visual {
+      padding: var(--cds-spacing-05);
+      display: grid;
+      gap: var(--cds-spacing-03);
+      background: var(--cds-layer);
+    }
+
+    .stats-section {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--cds-spacing-05);
+      margin-bottom: var(--vertical-spacing);
+    }
+
+    .stat-card {
+      background: var(--cds-layer);
+      padding: var(--cds-spacing-09);
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 4rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--cds-blue-60);
+      margin-bottom: var(--cds-spacing-05);
+    }
+
+    .stat-label {
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: var(--cds-gray-100);
+    }
+
+    .info-section {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--cds-spacing-05);
+      margin-bottom: var(--vertical-spacing);
+    }
+
+    .event-info-card,
+    .rules-card {
+      background: var(--cds-layer);
+      padding: var(--cds-spacing-09);
+    }
+
+    .event-info-card h2,
+    .rules-card h2 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      line-height: 1.29;
+      margin-bottom: var(--cds-spacing-07);
+      color: var(--cds-gray-100);
+    }
+
+    .info-grid {
+      display: grid;
+      gap: var(--cds-spacing-06);
+    }
+
+    .info-item {
+      background: var(--cds-white);
+      padding: var(--cds-spacing-06);
+    }
+
+    .info-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: var(--cds-spacing-03);
+      color: var(--cds-gray-100);
+    }
+
+    .info-item p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--cds-gray-70);
+      font-weight: 300;
+    }
+
+    .rules-card ul {
+      padding-left: 0;
+      list-style: none;
+      display: grid;
+      gap: var(--cds-spacing-05);
+    }
+
+    .rules-card li {
+      font-size: 0.875rem;
+      line-height: 1.43;
+      color: var(--cds-gray-100);
+      font-weight: 300;
+      padding-left: var(--cds-spacing-06);
+      border-left: 2px solid var(--cds-blue-60);
+    }
+
+    .rules-card li strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: var(--cds-spacing-02);
+    }
+
+    .visual-main {
+      overflow: hidden;
+      min-height: 360px;
+      background: var(--cds-border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--cds-spacing-03);
+    }
+
+    .visual-grid img,
+    .visual-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .visual-grid .thumb {
+      overflow: hidden;
+      min-height: 180px;
+      background: var(--cds-border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .placeholder-text {
+      color: var(--cds-gray-50);
+      font-size: 0.875rem;
+      text-align: center;
+      padding: var(--cds-spacing-05);
+    }
+
+    .form-card {
+      padding: var(--cds-spacing-10) var(--cds-spacing-09);
+      background: var(--cds-layer);
+    }
+
+    .form-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--cds-spacing-07);
+      margin-bottom: var(--cds-spacing-09);
+    }
+
+    .form-head h2 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: clamp(1.75rem, 3vw, 2.625rem);
+      font-weight: 300;
+      line-height: 1.19;
+      margin-bottom: var(--cds-spacing-05);
+      color: var(--cds-gray-100);
+    }
+
+    .form-head p {
+      color: var(--cds-gray-100);
+      font-size: 1rem;
+      line-height: 1.5;
+      max-width: 640px;
+      font-weight: 300;
+    }
+
+    .embed-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--cds-spacing-05);
+      align-items: start;
+    }
+
+    .embed-panel {
+      background: var(--cds-white);
+      overflow: hidden;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--cds-spacing-09);
+    }
+
+    .info-panel {
+      display: grid;
+      gap: var(--cds-spacing-05);
+    }
+
+    .info-card {
+      background: var(--cds-white);
+      padding: var(--cds-spacing-07);
+    }
+
+    .info-card h3 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: var(--cds-spacing-05);
+      color: var(--cds-gray-100);
+    }
+
+    .info-card p,
+    .info-card li {
+      color: var(--cds-gray-100);
+      font-size: 0.875rem;
+      line-height: 1.43;
+      font-weight: 300;
+    }
+
+    .info-card ul {
+      padding-left: var(--cds-spacing-06);
+      display: grid;
+      gap: var(--cds-spacing-03);
+    }
+
+    .form-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      text-decoration: none;
+      padding: var(--cds-spacing-04) var(--cds-spacing-05);
+      font-size: 0.875rem;
+      font-weight: 400;
+      background: var(--cds-blue-60);
+      color: var(--cds-white);
+      border: none;
+      transition: background 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
+      margin-top: var(--cds-spacing-06);
+      cursor: pointer;
+    }
+
+    .form-link:hover {
+      background: var(--cds-blue-70);
+    }
+
+    .form-link:focus {
+      outline: 2px solid var(--cds-blue-60);
+      outline-offset: 2px;
+    }
+
+    .tiny-note {
+      margin-top: var(--cds-spacing-05);
+      font-size: 0.75rem;
+      color: var(--cds-gray-70);
+      line-height: 1.33;
+      font-weight: 300;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .info-section,
+      .embed-layout,
+      .stats-section {
+        grid-template-columns: 1fr;
+      }
+
+      .form-head {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page-shell {
+        padding: var(--cds-spacing-07) var(--cds-spacing-05);
+      }
+
+      .hero-copy,
+      .hero-visual,
+      .event-info-card,
+      .rules-card,
+      .form-card,
+      .stat-card {
+        padding: var(--cds-spacing-06);
+      }
+
+      .hero-details,
+      .visual-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* Header Navigation */
+    .header {
+      background: var(--cds-white);
+      border-bottom: 1px solid var(--cds-border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-content {
+      max-width: 1584px;
+      margin: 0 auto;
+      padding: var(--cds-spacing-05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--cds-gray-100);
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--cds-spacing-07);
+      align-items: center;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--cds-gray-100);
+      font-size: 0.875rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--cds-blue-60);
+    }
+
+    .btn-register {
+      padding: var(--cds-spacing-04) var(--cds-spacing-06);
+      background: var(--cds-blue-60);
+      color: var(--cds-white);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 400;
+      transition: background 0.2s;
+    }
+
+    .btn-register:hover {
+      background: var(--cds-blue-70);
+    }
+
+    /* Focus Areas Section */
+    .focus-section {
+      background: var(--cds-white);
+      padding: var(--cds-spacing-10) 0;
+      margin-bottom: var(--vertical-spacing);
+    }
+
+    .focus-header {
+      text-align: center;
+      margin-bottom: var(--cds-spacing-09);
+    }
+
+    .focus-header h2 {
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: var(--cds-spacing-05);
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--cds-spacing-05);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .focus-card {
+      background: var(--cds-layer);
+      padding: var(--cds-spacing-07);
+      text-align: center;
+    }
+
+    .focus-icon {
+      font-size: 3rem;
+      margin-bottom: var(--cds-spacing-05);
+    }
+
+    .focus-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: var(--cds-spacing-04);
+    }
+
+    .focus-card p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--cds-gray-70);
+      font-weight: 300;
+    }
+
+    @media (max-width: 980px) {
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        gap: var(--cds-spacing-05);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="logo-link">
+        <svg width="40" height="16" viewBox="0 0 40 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="12" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" fill="#161616">IBM</text>
+        </svg>
+      </a>
+      <nav class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#details" class="nav-link">Event Details</a>
+        <a href="register.html" class="btn-register">Register Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="logo-wrap">
+          <svg width="176" height="70" viewBox="0 0 176 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="50" font-family="IBM Plex Sans, sans-serif" font-size="48" font-weight="600" fill="#161616">IBM</text>
+          </svg>
+        </div>
+        <div class="eyebrow">IBM Bobathon 2026 • July 15-16, 2026</div>
+        <h1>2026 IBM <span>Bobathon</span></h1>
+        <p class="lead">
+          Get ready for the ultimate hackathon experience at IBM's iconic 16 York Street headquarters in Downtown Toronto!
+          Join us for two days of intense coding, innovation, and collaboration. Build groundbreaking projects, compete with the best developers,
+          and showcase your skills in this electrifying event. This is your chance to hack at one of the most prestigious tech venues in Canada!
+        </p>
+        <div class="hero-details">
+          <div class="detail-chip">
+            <strong>Location</strong>
+            <span>16 York St, Downtown Toronto</span>
+          </div>
+          <div class="detail-chip">
+            <strong>Start Date</strong>
+            <span>July 15, 2026 at 9:00 AM ET</span>
+          </div>
+          <div class="detail-chip">
+            <strong>End Date</strong>
+            <span>July 16, 2026 at 5:00 PM ET</span>
+          </div>
+          <div class="detail-chip">
+            <strong>Team Size</strong>
+            <span>1 person</span>
+          </div>
+          <div class="detail-chip">
+            <strong>Daily Submission Limit</strong>
+            <span>1 submission per day</span>
+          </div>
+          <div class="detail-chip">
+            <strong>Total Submission Limit</strong>
+            <span>5 submissions maximum</span>
+          </div>
+        </div>
+        <div class="highlights">
+          <span class="highlight-tag">In-Person @ IBM Toronto</span>
+          <span class="highlight-tag">Solo Competition</span>
+          <span class="highlight-tag">2-Day Hackathon</span>
+          <span class="highlight-tag">Downtown Location</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Event gallery">
+        <div class="visual-main">
+          <img src="img3.png" alt="IBM Bobathon 2026 - Main Event Image" />
+        </div>
+        <div class="visual-grid">
+          <div class="thumb">
+            <img src="img1.png" alt="IBM Bobathon 2026 - Event Scene 1" />
+          </div>
+          <div class="thumb">
+            <img src="img2.png" alt="IBM Bobathon 2026 - Event Scene 2" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="stat-card">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Teams Registered</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Submissions</div>
+      </div>
+    </section>
+
+    <section class="info-section" id="details">
+      <div class="event-info-card">
+        <h2>Event Details</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <h3>📅 Schedule</h3>
+            <p>
+              <strong>Start:</strong> July 15, 2026 at 9:00 AM (Canada/Eastern)<br>
+              <strong>End:</strong> July 16, 2026 at 5:00 PM (Canada/Eastern)<br>
+              <strong>Duration:</strong> 2 days of intensive development<br>
+              <strong>Location:</strong> IBM Toronto, 16 York Street, Downtown Toronto
+            </p>
+          </div>
+          <div class="info-item">
+            <h3>🏢 Venue</h3>
+            <p>
+              Experience innovation at IBM's state-of-the-art Toronto headquarters! Located in the heart of Downtown Toronto at 16 York Street,
+              you'll be hacking in one of Canada's most prestigious tech spaces. Enjoy world-class facilities, high-speed internet,
+              collaborative workspaces, and an inspiring environment designed for breakthrough innovation.
+            </p>
+          </div>
+          <div class="info-item">
+            <h3>👤 Team Structure</h3>
+            <p>
+              This is a solo competition. Each participant works independently to create their submission. 
+              Team size is limited to 1 person per entry.
+            </p>
+          </div>
+          <div class="info-item">
+            <h3>🎯 Submission Guidelines</h3>
+            <p>
+              You can submit up to 1 project per day, with a maximum of 5 total submissions throughout the event. 
+              Daily submission count resets at midnight Canada/Eastern time.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rules-card">
+        <h2>Important Rules</h2>
+        <ul>
+          <li>
+            <strong>Daily Limit</strong>
+            Maximum 1 submission per day
+          </li>
+          <li>
+            <strong>Total Limit</strong>
+            Maximum 5 submissions total
+          </li>
+          <li>
+            <strong>Reset Time</strong>
+            Daily count resets at midnight ET
+          </li>
+          <li>
+            <strong>Solo Work</strong>
+            Individual participation only
+          </li>
+          <li>
+            <strong>In-Person Event</strong>
+            Must attend at IBM Toronto, 16 York St
+          </li>
+          <li>
+            <strong>Time Zone</strong>
+            All times in Canada/Eastern
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="focus-section" id="about">
+      <div class="focus-header">
+        <h2>Bringing you the power of IBM Bob!</h2>
+        <p style="font-size: 1rem; color: var(--cds-gray-70); max-width: 640px; margin: 0 auto;">
+          Build intelligent applications using Agent Patterns, MCP, and the future of AI Native Design
+        </p>
+      </div>
+      <div class="focus-grid">
+        <div class="focus-card">
+          <div class="focus-icon">🤖</div>
+          <h3>AI Agents</h3>
+          <p>
+            Use Bob to accelerate software development by automating complex, time-consuming work,
+            from building new features to modernizing legacy systems and strengthening secure delivery.
+          </p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-icon">💻</div>
+          <h3>App Modernization</h3>
+          <p>
+            Work with Bob to modernize Java, COBOL, RPG, and mainframe systems by reverse-engineering
+            undocumented code and executing validated upgrades in days instead of months.
+          </p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-icon">⚡</div>
+          <h3>DevOps</h3>
+          <p>
+            Learn how Bob can help you create production-ready integration agents and MCP servers in minutes,
+            accelerating automation across enterprise workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="stat-card" style="background: var(--cds-layer); padding: var(--cds-spacing-09); text-align: center; margin-bottom: var(--vertical-spacing);">
+      <h2 style="font-size: 2rem; font-weight: 300; margin-bottom: var(--cds-spacing-05);">Compete for Amazing Prizes</h2>
+      <div style="font-size: 4rem; font-weight: 300; color: var(--cds-blue-60); margin: var(--cds-spacing-07) 0;">$10,000</div>
+      <p style="font-size: 1.125rem; color: var(--cds-gray-70);">In prizes up for grabs</p>
+      <a href="register.html" class="form-link" style="max-width: 300px; margin: var(--cds-spacing-07) auto 0; display: inline-flex;">
+        Register Now
+      </a>
+    </section>
+  </div>
+</body>
+</html>
