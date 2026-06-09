@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | 2026 IBM Bobathon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cds-blue-60: #0f62fe;
+      --cds-blue-70: #0043ce;
+      --cds-gray-100: #161616;
+      --cds-gray-90: #262626;
+      --cds-gray-70: #525252;
+      --cds-gray-60: #6f6f6f;
+      --cds-gray-50: #8d8d8d;
+      --cds-gray-30: #c6c6c6;
+      --cds-gray-20: #e0e0e0;
+      --cds-gray-10: #f4f4f4;
+      --cds-white: #ffffff;
+      --cds-layer: #f4f4f4;
+      --cds-layer-hover: #e8e8e8;
+      --cds-border-subtle: #e0e0e0;
+
+      --cds-spacing-02: 0.25rem;
+      --cds-spacing-03: 0.5rem;
+      --cds-spacing-04: 0.75rem;
+      --cds-spacing-05: 1rem;
+      --cds-spacing-06: 1.5rem;
+      --cds-spacing-07: 2rem;
+      --cds-spacing-08: 2.5rem;
+      --cds-spacing-09: 3rem;
+      --cds-spacing-10: 4rem;
+      --cds-spacing-11: 5rem;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 100%;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: var(--cds-gray-100);
+      background: var(--cds-white);
+      min-height: 100vh;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .header {
+      background: var(--cds-white);
+      border-bottom: 1px solid var(--cds-border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-content {
+      max-width: 1584px;
+      margin: 0 auto;
+      padding: var(--cds-spacing-05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--cds-spacing-05);
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--cds-gray-100);
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--cds-spacing-05);
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-link,
+    .btn-back {
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 400;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav-link {
+      color: var(--cds-gray-100);
+    }
+
+    .nav-link:hover {
+      color: var(--cds-blue-60);
+    }
+
+    .btn-back {
+      padding: var(--cds-spacing-03) var(--cds-spacing-05);
+      background: var(--cds-layer);
+      color: var(--cds-gray-100);
+      border: 1px solid var(--cds-gray-30);
+    }
+
+    .btn-back:hover {
+      background: var(--cds-gray-20);
+    }
+
+    .page-shell {
+      max-width: 1584px;
+      margin: 0 auto;
+      padding: var(--cds-spacing-10) var(--cds-spacing-05);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: var(--cds-spacing-05);
+      margin-bottom: var(--cds-spacing-10);
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-meta,
+    .faq-panel,
+    .footer-note {
+      background: var(--cds-layer);
+    }
+
+    .hero-copy {
+      padding: var(--cds-spacing-10) var(--cds-spacing-09);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 400;
+      margin-bottom: var(--cds-spacing-05);
+      color: var(--cds-gray-100);
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4.75rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--cds-spacing-06);
+      color: var(--cds-gray-100);
+    }
+
+    h1 span {
+      color: var(--cds-blue-60);
+      font-weight: 700;
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: var(--cds-gray-100);
+      max-width: 48rem;
+      font-weight: 300;
+      margin-bottom: var(--cds-spacing-08);
+    }
+
+    .hero-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--cds-border-subtle);
+    }
+
+    .detail-chip {
+      background: var(--cds-white);
+      padding: var(--cds-spacing-06);
+    }
+
+    .detail-chip strong {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: var(--cds-spacing-03);
+    }
+
+    .detail-chip span {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--cds-gray-70);
+      line-height: 1.43;
+      font-weight: 400;
+    }
+
+    .hero-meta {
+      padding: var(--cds-spacing-09);
+      display: grid;
+      gap: var(--cds-spacing-05);
+      align-content: start;
+    }
+
+    .meta-card {
+      background: var(--cds-white);
+      padding: var(--cds-spacing-07);
+    }
+
+    .meta-card h2 {
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: var(--cds-spacing-05);
+    }
+
+    .meta-card p,
+    .meta-card li {
+      font-size: 0.875rem;
+      line-height: 1.43;
+      color: var(--cds-gray-100);
+      font-weight: 300;
+    }
+
+    .meta-card ul {
+      padding-left: var(--cds-spacing-06);
+      display: grid;
+      gap: var(--cds-spacing-03);
+    }
+
+    .section-heading {
+      font-size: clamp(1.75rem, 3vw, 2.625rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: var(--cds-spacing-07);
+      color: var(--cds-gray-100);
+    }
+
+    .faq-layout {
+      display: grid;
+      gap: var(--cds-spacing-08);
+    }
+
+    .faq-group {
+      display: grid;
+      gap: var(--cds-spacing-04);
+    }
+
+    .faq-group-title {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--cds-gray-100);
+      padding-bottom: var(--cds-spacing-03);
+      border-bottom: 1px solid var(--cds-border-subtle);
+    }
+
+    .faq-panel {
+      padding: var(--cds-spacing-08);
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--cds-border-subtle);
+      background: var(--cds-white);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 1px solid var(--cds-border-subtle);
+    }
+
+    .faq-question {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      padding: var(--cds-spacing-06) var(--cds-spacing-07);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--cds-spacing-05);
+      cursor: pointer;
+      font: inherit;
+      color: var(--cds-gray-100);
+      transition: background 0.2s ease;
+    }
+
+    .faq-question:hover {
+      background: var(--cds-layer-hover);
+    }
+
+    .faq-question-text {
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      position: relative;
+    }
+
+    .faq-icon::before,
+    .faq-icon::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1rem;
+      height: 2px;
+      background: var(--cds-blue-60);
+      transform: translate(-50%, -50%);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .faq-item.open .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: var(--cds-spacing-05) var(--cds-spacing-07) var(--cds-spacing-07);
+      color: var(--cds-gray-70);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .faq-answer p + p,
+    .faq-answer p + ul,
+    .faq-answer ul + p,
+    .faq-answer ul + ul {
+      margin-top: var(--cds-spacing-04);
+    }
+
+    .faq-answer ul {
+      padding-left: var(--cds-spacing-06);
+      display: grid;
+      gap: var(--cds-spacing-03);
+    }
+
+    .faq-answer strong {
+      color: var(--cds-gray-100);
+      font-weight: 600;
+    }
+
+    .faq-answer a {
+      color: var(--cds-blue-60);
+      text-decoration: none;
+    }
+
+    .faq-answer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-note {
+      margin-top: var(--cds-spacing-10);
+      padding: var(--cds-spacing-08);
+    }
+
+    .footer-note p {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: var(--cds-gray-70);
+      font-weight: 300;
+    }
+
+    .footer-note p + p {
+      margin-top: var(--cds-spacing-03);
+    }
+
+    @media (max-width: 1080px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-details {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .header-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .page-shell {
+        padding: var(--cds-spacing-07) var(--cds-spacing-05);
+      }
+
+      .hero-copy,
+      .hero-meta,
+      .faq-panel,
+      .footer-note {
+        padding: var(--cds-spacing-06);
+      }
+
+      .faq-question {
+        padding: var(--cds-spacing-05);
+      }
+
+      .faq-answer {
+        padding: var(--cds-spacing-04) var(--cds-spacing-05) var(--cds-spacing-05);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="logo-link" aria-label="IBM Bobathon home">
+        <svg width="40" height="16" viewBox="0 0 40 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="12" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" fill="#161616">IBM</text>
+        </svg>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="faq.html" class="btn-back" aria-current="page">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="section-heading">Frequently Asked Questions</h2>
+
+      <div class="faq-layout">
+        <div class="faq-group">
+          <h3 class="faq-group-title">General Information</h3>
+          <div class="faq-panel">
+            <div class="faq-item open">
+              <button class="faq-question" type="button" aria-expanded="true">
+                <span class="faq-question-text">What is the IBM Bobathon?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>The IBM Bobathon is a 2-day student hackathon focused on building agentic AI solutions using IBM Bob and watsonx Orchestrate. Participants will work with cutting-edge AI technologies to solve real-world, industry-specific challenges.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">When and where is the event?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Dates:</strong> July 15-16, 2026</p>
+                <p><strong>Location:</strong> IBM office at 16 York</p>
+                <p><strong>Duration:</strong> 2 days</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Who can participate?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>The IBM Bobathon is open to all university and college students. You don't need to be a computer science major - we welcome students from all disciplines who are interested in AI and technology.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Is there a registration fee?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>There is no registration fee</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">When and how will I know if I've made the cut to be in the Hackathon?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>We will send an email to everyone who registered by INSERT DATE stating whether you are officially in the Hackathon or have been placed on a waitlist.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What is the team size?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Teams typically consist of 2-5 members. Each team member must register individually. If you do not have a team you will be matched with other participants.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-group">
+          <h3 class="faq-group-title">Technology & Tools</h3>
+          <div class="faq-panel">
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What is IBM Bob?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>IBM Bob is an advanced AI coding assistant that helps developers build applications more efficiently. It provides intelligent code suggestions, debugging assistance, and integrates with modern development workflows.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What is watsonx Orchestrate?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>watsonx Orchestrate is IBM's platform for building and deploying agentic AI solutions. It enables you to create AI agents that can automate complex workflows and make intelligent decisions.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Do I need prior experience with IBM Bob or watsonx?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>No prior experience is required! We'll provide tutorials, documentation, and mentors to help you get started. However, basic programming knowledge is recommended.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What programming languages are supported?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>IBM Bob and watsonx Orchestrate support multiple programming languages including Python, JavaScript, Java, and more. You can choose the language you're most comfortable with.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Will there be technical workshops or tutorials?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes! We'll provide:</p>
+                <ul>
+                  <li>Pre-event setup guides and tutorials</li>
+                  <li>Opening session with technology overview</li>
+                  <li>On-site mentors and technical support</li>
+                  <li>Access to documentation and resources</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-group">
+          <h3 class="faq-group-title">Challenges & Projects</h3>
+          <div class="faq-panel">
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What kind of challenges will we work on?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Participants will build innovative solutions using IBM Bob for real-world challenges across three key focus sectors:</p>
+                <p><strong>🏛 Government</strong></p>
+                <p>Create solutions that improve public services, enhance citizen engagement, and streamline government operations using IBM Bob's AI capabilities to modernize legacy systems and automate workflows.</p>
+                <p><strong>🛒 Retail</strong></p>
+                <p>Transform the retail experience with intelligent applications that enhance customer engagement, optimize inventory, and personalize shopping experiences using Bob's advanced AI agent patterns.</p>
+                <p><strong>🏦 Banking</strong></p>
+                <p>Build secure banking solutions that enhance financial services, improve customer experiences, and modernize legacy banking systems using Bob's AI capabilities for fraud detection, automation, and personalization.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can we bring our own project ideas?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>While we'll provide specific challenges, creative interpretations and innovative approaches are highly encouraged. Discuss your ideas with mentors during the event.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Do we need to complete a full solution?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>No! We understand this is a 2-day event. Focus on creating a working prototype or proof-of-concept that demonstrates your approach and the potential of your solution.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-group">
+          <h3 class="faq-group-title">Prizes & Recognition</h3>
+          <div class="faq-panel">
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What prizes are available?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>The IBM Bobathon offers exciting prizes including:</p>
+                <p><strong>VIP Recruitment Experience</strong> - Fast-track opportunity with IBM recruitment team</p>
+                <ul>
+                  <li>IBM swag</li>
+                  <li>Certificates of participation</li>
+                  <li>Networking opportunities with IBM professionals</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">How will projects be judged?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Projects will be evaluated based on:</p>
+                <ul>
+                  <li>Innovation and creativity</li>
+                  <li>Technical implementation</li>
+                  <li>Use of IBM Bob and watsonx Orchestrate</li>
+                  <li>Practical applicability</li>
+                  <li>Presentation quality</li>
+                  <li>Team collaboration</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">When will winners be announced?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Winners will be announced at the closing ceremony on July 16, 2026.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-group">
+          <h3 class="faq-group-title">Logistics</h3>
+          <div class="faq-panel">
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What should I bring?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Required:</strong></p>
+                <ul>
+                  <li>Laptop with charger</li>
+                </ul>
+                <p><strong>Recommended:</strong></p>
+                <ul>
+                  <li>External mouse and keyboard (if preferred)</li>
+                  <li>Headphones</li>
+                  <li>Water bottle</li>
+                  <li>Notebook and pen</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Will food be provided?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes! Meals, snacks, and beverages will be provided throughout the event. Please indicate any dietary restrictions during registration.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Is there parking available?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>There is no parking provided. Public transportation is recommended.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can I leave and come back?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes, but you must check in and out at the registration desk for security purposes. However, we encourage you to stay for the full experience!</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Is overnight hacking allowed?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>The venue will close overnight. Specific hours will be communicated closer to the event date.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-group">
+          <h3 class="faq-group-title">Preparation</h3>
+          <div class="faq-panel">
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">How can I prepare for the hackathon?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Review the technologies:</strong></p>
+                <ul>
+                  <li>Explore IBM Bob documentation</li>
+                  <li>Learn about watsonx Orchestrate</li>
+                  <li>Familiarize yourself with agentic AI concepts</li>
+                </ul>
+                <p><strong>Brush up on skills:</strong></p>
+                <ul>
+                  <li>Review your programming fundamentals</li>
+                  <li>Practice with APIs and integrations</li>
+                  <li>Learn about AI/ML basics</li>
+                </ul>
+                <p><strong>Form a team:</strong></p>
+                <ul>
+                  <li>Connect with other participants before the event. Ensure each team member registers individually.</li>
+                  <li>Discuss potential approaches and ideas</li>
+                </ul>
+                <p><strong>Set up your environment:</strong></p>
+                <ul>
+                  <li>Ensure your laptop meets technical requirements</li>
+                  <li>Install necessary development tools</li>
+                  <li>Test your setup before the event</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Are there any pre-event resources?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes! Registered participants will receive:</p>
+                <ul>
+                  <li>Setup guides and installation instructions</li>
+                  <li>Tutorial videos and documentation</li>
+                  <li>Access to practice environments</li>
+                  <li>Community forum for questions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-group">
+          <h3 class="faq-group-title">Support & Mentorship</h3>
+          <div class="faq-panel">
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Will there be mentors available?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes! IBM engineers and AI experts will be available throughout the event to:</p>
+                <ul>
+                  <li>Answer technical questions</li>
+                  <li>Provide guidance on best practices</li>
+                  <li>Help troubleshoot issues</li>
+                  <li>Offer advice on project direction</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">How do I get help during the event?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <ul>
+                  <li>Visit the mentor desk for in-person assistance</li>
+                  <li>Use the event Discord channel for quick questions</li>
+                  <li>Ask questions during workshops</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What if I'm new to hackathons?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Don't worry! Many participants are first-time hackers. We'll provide:</p>
+                <ul>
+                  <li>Beginner-friendly workshops</li>
+                  <li>Extra support for new participants</li>
+                  <li>Team formation assistance</li>
+                  <li>Step-by-step guidance</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-group">
+          <h3 class="faq-group-title">Registration & Contact</h3>
+          <div class="faq-panel">
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">How do I register?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Visit the official registration page: <a href="https://bob4schools.com/register.html">https://bob4schools.com/register.html</a></p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What is the registration deadline?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Registration deadline will be announced on the official registration page. We recommend registering early as spots are limited.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can I register as an individual?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes! You can register individually and we'll help match you with a team, or you can form a team during the event.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What if I need to cancel my registration?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Please contact the event organizers as soon as possible if you need to cancel. Cancellation policies will be outlined during registration.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Who do I contact for more questions?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>For additional questions, please contact:</p>
+                <ul>
+                  <li>Event email: [To be provided on registration page]</li>
+                  <li>Event website: [To be provided]</li>
+                  <li>Social media: [To be provided]</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-group">
+          <h3 class="faq-group-title">Code of Conduct</h3>
+          <div class="faq-panel">
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Is there a code of conduct?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes. All participants must adhere to the IBM Bobathon Code of Conduct, which includes:</p>
+                <ul>
+                  <li>Respectful and inclusive behavior</li>
+                  <li>No harassment or discrimination</li>
+                  <li>Collaborative and supportive environment</li>
+                  <li>Honest and ethical conduct</li>
+                  <li>Compliance with IBM policies and venue rules</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What happens if someone violates the code of conduct?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Violations will be taken seriously and may result in removal from the event without refund.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-group">
+          <h3 class="faq-group-title">Additional Information</h3>
+          <div class="faq-panel">
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can I use external libraries and frameworks?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes! You're encouraged to use any open-source libraries, frameworks, and tools that help you build your solution.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Will I retain ownership of my project?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes, participants retain ownership of their projects. However, you may be asked to share your work for promotional purposes (with your permission).</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can I continue working on my project after the hackathon?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Absolutely! We encourage you to continue developing your projects and potentially turn them into real products or research.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Will there be networking opportunities?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes! The IBM Bobathon is a great opportunity to:</p>
+                <ul>
+                  <li>Meet IBM professionals and recruiters</li>
+                  <li>Connect with fellow students and developers</li>
+                  <li>Learn about career opportunities at IBM</li>
+                  <li>Build your professional network</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Is there a virtual option?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>This is an in person only event. There will be no virtual option</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-note" aria-label="FAQ update information">
+      <p>This FAQ will be updated regularly. Please check back for the latest information.</p>
+      <p><strong>Last Updated:</strong> June 9, 2026</p>
+      <p>For the most current information, please visit the official IBM Bobathon registration page and event website.</p>
+    </section>
+  </main>
+
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach((item) => {
+      const button = item.querySelector('.faq-question');
+
+      button.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+
+        item.classList.toggle('open', !isOpen);
+        button.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+  </script>
+</body>
+</html>
