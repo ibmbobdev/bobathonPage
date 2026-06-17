@@ -6,6 +6,8 @@
   <title>Register | 2026 IBM Bobathon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://airtable.com" />
+  <link rel="dns-prefetch" href="https://airtable.com" />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -148,6 +150,7 @@
     .embed-panel {
       background: var(--cds-white);
       overflow: hidden;
+      contain: layout style paint;
     }
 
     .embed-frame {
@@ -157,6 +160,14 @@
       border: 0;
       background: #ffffff;
       display: block;
+      will-change: contents;
+    }
+    
+    /* Preconnect to Airtable for faster loading */
+    @supports (content-visibility: auto) {
+      .embed-panel {
+        content-visibility: auto;
+      }
     }
 
     .info-panel {
@@ -265,8 +276,10 @@
       <div class="form-head">
         <h1>Register for Bobathon 2026</h1>
         <p>
-          Complete the registration form to secure your spot in the 2026 IBM Bobathon.
-          Each team member must register individually. Don't have a team? No worries - we'll match you with other participants!
+          Complete the registration form to secure your spot in one of our four 3.5-hour sessions.
+          Learn IBM Bob through hands-on labs, then add your own creative twist to compete for prizes!
+          Register for your preferred day (July 15 or 16), and we'll confirm which session block (morning or afternoon) you're assigned to.
+          Limited to 50 students per session!
         </p>
       </div>
 
@@ -275,18 +288,19 @@
           <iframe
             class="airtable-embed embed-frame"
             title="Bobathon 2026 Registration Form"
-            src="https://airtable.com/embed/appadnAzl6Aa4huXD/pagi1nSw1u2j6BH9r/form"
+            src="https://airtable.com/embed/appadnAzl6Aa4huXD/pagASbNntRNN5vQDF/form"
             frameborder="0"
             onmousewheel=""
             width="100%"
             height="533"
             loading="eager"
+            fetchpriority="high"
             style="background: transparent; border: 1px solid #ccc;">
           </iframe>
           <noscript>
             <p style="padding: 2rem; text-align: center;">
               Please enable JavaScript to view the registration form, or
-              <a href="https://airtable.com/appadnAzl6Aa4huXD/pagi1nSw1u2j6BH9r/form" target="_blank" rel="noopener noreferrer">
+              <a href="https://airtable.com/appadnAzl6Aa4huXD/pagASbNntRNN5vQDF/form" target="_blank" rel="noopener noreferrer">
                 open the form in a new tab
               </a>.
             </p>
@@ -302,13 +316,13 @@
             <ul>
               <li>Full name</li>
               <li>Email address</li>
-              <li>GitHub username (optional)</li>
+              <li>Preferred day (July 15 or 16)</li>
               <li>Brief introduction</li>
-              <li>Team preference (if you have one)</li>
+              <li>Any dietary restrictions</li>
             </ul>
             <p class="tiny-note">
-              Each team member must register separately. Teams should have 3-5 members.
-              Solo registrants will be matched into teams before the event.
+              <strong>Session Assignment:</strong> After registration, we'll confirm which session block (morning or afternoon)
+              you're assigned to based on availability. Each session accommodates 50 students.
             </p>
           </div>
 
@@ -322,13 +336,16 @@
           </div>
 
           <div class="info-card">
-            <h3>Questions?</h3>
+            <h3>Session Details</h3>
             <p>
-              If you have any questions about registration or the event, please reach out to the organizing team.
+              <strong>Morning Sessions:</strong> 9:00 AM - 12:30 PM (Doors open 8:30 AM)<br>
+              <strong>Afternoon Sessions:</strong> 1:30 PM - 5:00 PM (Doors open 1:00 PM)<br><br>
+              Each 3.5-hour session includes registration, Bob intro, hands-on lab, and build challenge where you can
+              add your own creative twist to compete for prizes!
             </p>
             <a
               class="form-link"
-              href="https://airtable.com/appadnAzl6Aa4huXD/pagi1nSw1u2j6BH9r/form"
+              href="https://airtable.com/appadnAzl6Aa4huXD/pagASbNntRNN5vQDF/form"
               target="_blank"
               rel="noopener noreferrer">
               Open Form in New Tab
